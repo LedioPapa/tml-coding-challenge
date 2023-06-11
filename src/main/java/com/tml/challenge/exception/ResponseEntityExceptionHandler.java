@@ -21,7 +21,7 @@ public class ResponseEntityExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<Object> handleMethodArgumentTypeMismatch(MethodArgumentTypeMismatchException ex) {
         String parameterName = ex.getName();
-        String errorMessage = String.format("Bad request: Invalid value for parameter '%s'.", parameterName);
+        String errorMessage = String.format("Invalid value for parameter: %s.", parameterName);
         return new ResponseEntity<>(errorMessage, HttpStatus.BAD_REQUEST);
     }
 

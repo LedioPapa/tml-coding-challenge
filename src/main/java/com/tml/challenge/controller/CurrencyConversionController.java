@@ -48,13 +48,13 @@ public class CurrencyConversionController {
             @Parameter(description = "Amount to be converted", required = true) @RequestParam("amount") Optional<BigDecimal> amount
     ) {
         if (baseCurrency.isEmpty() || !isValidCurrencyCode(baseCurrency.get().toUpperCase())) {
-            return ResponseEntity.badRequest().body("Invalid base currency.");
+            return ResponseEntity.badRequest().body("Invalid value for parameter: baseCurrency.");
         }
         if (targetCurrency.isEmpty() || !isValidCurrencyCode(targetCurrency.get().toUpperCase())) {
-            return ResponseEntity.badRequest().body("Invalid target currency.");
+            return ResponseEntity.badRequest().body("Invalid value for parameter: targetCurrency.");
         }
         if (amount.isEmpty() || amount.get().compareTo(BigDecimal.ZERO) <= 0) {
-            return ResponseEntity.badRequest().body("Invalid amount.");
+            return ResponseEntity.badRequest().body("Invalid value for parameter: amount.");
         }
         BigDecimal convertedAmount = conversionService.convertCurrency(baseCurrency.get().toUpperCase(), targetCurrency.get().toUpperCase(), amount.get());
         return ResponseEntity.ok(convertedAmount.toString());

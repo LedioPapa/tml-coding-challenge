@@ -32,7 +32,7 @@ public class CurrencyConversionControllerTest {
                         .param("targetCurrency", "EUR")
                         .param("amount", "100"))
                 .andExpect(status().isBadRequest())
-                .andExpect(content().string("Invalid base currency."));
+                .andExpect(content().string("Invalid value for parameter: baseCurrency."));
     }
 
     @Test
@@ -42,7 +42,7 @@ public class CurrencyConversionControllerTest {
                         .param("targetCurrency", "")
                         .param("amount", "100"))
                 .andExpect(status().isBadRequest())
-                .andExpect(content().string("Invalid target currency."));
+                .andExpect(content().string("Invalid value for parameter: targetCurrency."));
     }
 
     @Test
@@ -52,7 +52,7 @@ public class CurrencyConversionControllerTest {
                         .param("targetCurrency", "EUR")
                         .param("amount", "tst"))
                 .andExpect(status().isBadRequest())
-                .andExpect(content().string("Bad request: Invalid value for parameter 'amount'."));
+                .andExpect(content().string("Invalid value for parameter: amount."));
     }
 
     @Test
@@ -61,7 +61,7 @@ public class CurrencyConversionControllerTest {
                         .param("targetCurrency", "EUR")
                         .param("amount", "100"))
                 .andExpect(status().isBadRequest())
-                .andExpect(content().string("Invalid base currency."));
+                .andExpect(content().string("Invalid value for parameter: baseCurrency."));
     }
 
     @Test
@@ -70,7 +70,7 @@ public class CurrencyConversionControllerTest {
                         .param("baseCurrency", "USD")
                         .param("amount", "100"))
                 .andExpect(status().isBadRequest())
-                .andExpect(content().string("Invalid target currency."));
+                .andExpect(content().string("Invalid value for parameter: targetCurrency."));
     }
 
     @Test
@@ -79,7 +79,7 @@ public class CurrencyConversionControllerTest {
                         .param("baseCurrency", "USD")
                         .param("targetCurrency", "EUR"))
                 .andExpect(status().isBadRequest())
-                .andExpect(content().string("Invalid amount."));
+                .andExpect(content().string("Invalid value for parameter: amount."));
     }
 
     @Test
@@ -89,7 +89,7 @@ public class CurrencyConversionControllerTest {
                         .param("targetCurrency", "EUR")
                         .param("amount", "100"))
                 .andExpect(status().isBadRequest())
-                .andExpect(content().string("Invalid base currency."));
+                .andExpect(content().string("Invalid value for parameter: baseCurrency."));
     }
 
     @Test
@@ -99,7 +99,7 @@ public class CurrencyConversionControllerTest {
                         .param("targetCurrency", "EURO")
                         .param("amount", "100"))
                 .andExpect(status().isBadRequest())
-                .andExpect(content().string("Invalid target currency."));
+                .andExpect(content().string("Invalid value for parameter: targetCurrency."));
     }
 
     @Test
@@ -109,7 +109,7 @@ public class CurrencyConversionControllerTest {
                         .param("targetCurrency", "EUR")
                         .param("amount", "-100"))
                 .andExpect(status().isBadRequest())
-                .andExpect(content().string("Invalid amount."));
+                .andExpect(content().string("Invalid value for parameter: amount."));
     }
 
     @Test
