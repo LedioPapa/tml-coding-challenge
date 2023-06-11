@@ -1,0 +1,3 @@
+api:
+  baseUrl: http://api.exchangeratesapi.io/v1/
+  key: 1ae2b8ff70b4ef3cbfae22ffbb5ecda9
