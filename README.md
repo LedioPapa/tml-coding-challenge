@@ -62,7 +62,7 @@ docker build -t tml-coding-challenge .
 Create a container and start it using the following command:
 
 ```sh
-`docker run -p 8080:8080 -d tml-coding-challenge`
+docker run -p 8080:8080 -d tml-coding-challenge
 ```
 
 #### Optional Arguments
@@ -85,9 +85,9 @@ Swagger Documentation
 
 To check the API documentation, navigate to the following URL:
 
-bash
-
-`http://localhost:8080/swagger-ui.html`
+```
+http://localhost:8080/swagger-ui.html
+```
 
 Replace `localhost` and `8080` with the appropriate host and port if you are running the application on a different host
 or port.
